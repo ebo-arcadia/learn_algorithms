@@ -113,3 +113,43 @@ function nCubed(string, letter){
 }
 
 // only consider nested loops / loops iterations are proportional to n 
+
+// recursive functions, what are they?
+// functions call themselves
+
+function sayDownFrom(n){
+	console.log(n)
+	if(n > 1){
+		sayDownFrom(n -1) // recursive call
+	} else {
+		return true // base case
+	}
+}
+
+console.log(sayDownFrom(10))
+
+// why and when to use recursive functions?
+// when I think recursively for solutions
+// to understand some pupolar algorithms
+
+function sumUpTo(n){
+	if(n > 1){
+		sumUpTo(n - 1) + n
+	} else {
+		return 1
+	}
+}
+
+sumUpTo(5)
+// 1 + 2 + 3+ 4 + 5
+
+// how javascript interpret and execute this function?
+// 1. break down into recursive calls sumUpTo(4) -> sumUpTo(3) -> sumUpTo(2) ...
+// 2. keep going and evaluate each recursive call till it reaches the base case
+// 3. once base case is resolved
+// 4. it begins to resolve sumUpTo(2) -> sumUpTo(3) ...
+// ** no recursive calls can be evaluted till the base case provides a solution
+
+// summary
+// how to find recursive solution to a problem?
+// how javascript evaluates a recursive solution?
